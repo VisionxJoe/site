@@ -48,7 +48,53 @@
           <li class="l-section section section--is-active">
             <div class="intro">
               <div class="intro--banner">
-                <h1><br>JOE IRIS<br></h1>
+                  <div class="rotate-container">
+                      <div class="text" style="color: rgb(177, 153, 255);">JOE IRIS</div>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.1/tinycolor.min.js"></script>
+                    <script type="text/javascript">
+                    
+                    
+                      function start(options) {
+                        var frame = 0
+                        var text = document.querySelector('.text')
+                    
+                        text.innerHTML = options.text
+                    
+                        var tHeight = text.clientHeight
+                        var tWidth = text.clientWidth
+                    
+                        var baseColor = tinycolor('hsl(0, 100%, '+options.lightness+'% )')
+                    
+                    
+                        function update() {
+                          if (frame % options.colorInterval === 0) {
+                    
+                            baseColor.spin(Math.random() * 360)
+                    
+                            text.style.color = baseColor.toString()
+                          }
+                    
+                          frame++
+                          requestAnimationFrame(update)
+                        }
+                    
+                        update()
+                      }
+                    
+                    
+                      start({
+                        // the text you want to spin
+                        text: 'JOE IRIS',
+                        // the lightness of the random colors
+                        lightness: 80,
+                        // lower values make the color change faster
+                        colorInterval: 10
+                      })
+                    
+                    
+                    </script>
+                <!--<h1><br>JOE IRIS<br></h1> -->
                 <img src="assets/img/introduction-visual.png" alt="Welcome">
               </div>
               <div class="intro--options">

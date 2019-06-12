@@ -9,6 +9,7 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
 
@@ -104,6 +105,15 @@
           </li>
           <li class="l-section section">
           <div class="about--banner"> 
+              <div class="w3-content w3-section" style="max-width:500px">
+                  <img class="mySlides w3-animate-fading" src="assets/img/pablo.jpg" style="width:100%">
+                  <img class="mySlides w3-animate-fading" src="assets/img/ye.jpg" style="width:100%">
+              </div>
+
+
+
+
+            <!--
             <div id="MagicCarousel" class="carousel-slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                               <div class="carousel-item active">
@@ -115,6 +125,7 @@
                             </div>
                 </div>
               </div>
+              -->
           </div>
               <!--
               <div class="about--banner">
@@ -251,7 +262,22 @@
     <li>Shop</li>
   </ul>
 </div>
-
+<script>
+    var myIndex = 0;
+    carousel();
+    
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(carousel, 9000);    
+    }
+    </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
